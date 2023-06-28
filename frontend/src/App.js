@@ -22,7 +22,7 @@
 //   );
 // }
 
-import React, { useEffect } from "react";
+import React from "react";
 // import Picture from "./example/picture/Picture";
 import AppBar from "./scenes/global/AppBar";
 import Banner from "./scenes/global/Banner";
@@ -30,9 +30,6 @@ import NavBar from "./scenes/global/NavBar";
 import Footer from "./scenes/global/Footer";
 import Coppyright from "./scenes/global/Coppyright";
 import { Outlet } from "react-router-dom";
-import Loading from "./components/Loading";
-import { categoryApi } from "./API/categoryApi";
-import { productApi } from "./API/productApi";
 import { Provider } from "react-redux";
 import store from "./state/store";
 

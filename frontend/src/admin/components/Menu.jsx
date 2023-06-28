@@ -37,20 +37,14 @@ export default function Menu() {
                 <li className="nav-item">
                   <Link to='/admin/product' className="nav-link">
                     <i className="far fa-circle nav-icon" />
-                    <p>Quản lý Products</p>
+                    <p>Danh sách sản phẩm</p>
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <a href="../tables/data.html" className="nav-link">
+                  <Link to='/admin/product/add' className="nav-link">
                     <i className="far fa-circle nav-icon" />
-                    <p>DataTables</p>
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a href="../tables/jsgrid.html" className="nav-link">
-                    <i className="far fa-circle nav-icon" />
-                    <p>jsGrid</p>
-                  </a>
+                    <p>Thêm sản phẩm</p>
+                  </Link>
                 </li>
               </ul>
             </li>

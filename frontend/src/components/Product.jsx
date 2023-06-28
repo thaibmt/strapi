@@ -8,8 +8,6 @@ import { addToCart } from "../state/cartSlice";
 export default function Product(props) {
   var product = props.product;
   const dispatch = useDispatch();
-  console.log(product);
- 
   return (
     <div>
       <Link to={"/product/" + product.id}>
@@ -21,7 +19,7 @@ export default function Product(props) {
         />
       </Link>
       <div className="caption cntr">
-        <label className="mb-2" style={{height: "30px"}}>
+        <label className="mb-2" style={{ height: "30px" }}>
           <Link to={"/product/" + product.id}>
             <p>{product.attributes.productName}</p>
           </Link>
@@ -35,31 +33,29 @@ export default function Product(props) {
             }).format()}
           </strong>
         </p>
-        {/* <p>{product.attributes.category.data.attributes.categoryName}</p> */}
         <h4>
           <Link
             to="#st"
             className="shopBtn btn btn-success"
-            title="Add to cart"
+            title="Thêm vào giỏ hàng"
             onClick={() =>
               dispatch(addToCart({ item: { ...product, count: 1 } }))
             }
           >
             {" "}
-            Add to cart
+            Thêm vào giỏ hàng
           </Link>
         </h4>
         <div className="actionList d-flex">
-          <a className="btn" href="#st" style={{padding: "2px"}}>
-            Add to Wish List{" "}
+          <a className="btn" href="#st" style={{ padding: "2px" }}>
+            Thêm vào yêu thích{" "}
           </a>
-          <a className="btn" href="#st" style={{padding: "2px"}}>
+          <a className="btn" href="#st" style={{ padding: "2px" }}>
             {" "}
-            Add to Compare{" "}
+            Thêm vào so sánh{" "}
           </a>
         </div>
       </div>
     </div>
   );
 }
-/*{AppUrl.ImageURL + product.attributes.image.data[0].attributes.url} <img src="assets/img/a.jpg" alt="">*/

@@ -27,13 +27,13 @@ export default function ProductDetail() {
     fetchProduct();
   }, []);
   var myView1 =
-    loading == true ? (
+    loading === true ? (
       <Loading />
     ) : (
       <PictureBox images={products.attributes?.image?.data} />
     );
   var myView2 =
-    loading == true ? (
+    loading === true ? (
       <Loading />
     ) : (
       <div>
@@ -98,7 +98,7 @@ export default function ProductDetail() {
               type="submit"
               className="shopBtn"
               onClick={() =>
-                dispatch(addToCart({ item: { ...products, count : 1 } }))
+                dispatch(addToCart({ item: { ...products, count: 1 } }))
               }
             >
               <span className=" icon-shopping-cart" /> Add to cart

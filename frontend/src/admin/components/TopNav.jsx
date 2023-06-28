@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function TopNav() {
     return (
@@ -8,10 +9,7 @@ export default function TopNav() {
                     <a className="nav-link" data-widget="pushmenu" href="#st" role="button"><i className="fas fa-bars" /></a>
                 </li>
                 <li className="nav-item d-none d-sm-inline-block">
-                    <a href="../../index3.html" className="nav-link">Home</a>
-                </li>
-                <li className="nav-item d-none d-sm-inline-block">
-                    <a href="#st" className="nav-link">Contact</a>
+                    <Link to="/">Trang chủ</Link>
                 </li>
             </ul>
             <ul className="navbar-nav ml-auto">

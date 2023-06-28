@@ -17,23 +17,23 @@ export default function AdminProductBox() {
   var { pageNum } = useParams();
   const handleDelete = (e) => {
     const deteleProduct = async (id) => {
-      var c=window.confirm('delete product?')
-      if(c==true)
-      try {
-        e.target.classList.remove('fa-trash');
-        e.target.classList.add('fa-spinner')
+      var c = window.confirm('delete product?')
+      if (c == true)
+        try {
+          e.target.classList.remove('fa-trash');
+          e.target.classList.add('fa-spinner')
 
-        await productApi.del(id);
-        e.target.classList.add('fa-trash');
-        e.target.classList.remove('fa-spinner')
+          await productApi.del(id);
+          e.target.classList.add('fa-trash');
+          e.target.classList.remove('fa-spinner')
 
-        setSuccessMsg("Delete success:" + id);
-        setLoadData(loadData + 1);
-      } catch (error) {
-        setWarningMsg("Delete error:" + id + error);
-      } finally {
-        window.scroll(0, 0);
-      }
+          setSuccessMsg("Delete success:" + id);
+          setLoadData(loadData + 1);
+        } catch (error) {
+          setWarningMsg("Delete error:" + id + error);
+        } finally {
+          window.scroll(0, 0);
+        }
     };
     deteleProduct(e.target.getAttribute("name"));
   };
@@ -79,11 +79,11 @@ export default function AdminProductBox() {
     fetchData();
   }, [pageNum, loadData, viewOption]);
 
-  var handleSelect = (e)=>{
+  var handleSelect = (e) => {
     setViewOption(e.target.value);
   }
 
-  
+
   return (
     <div className="card-body">
       <div className="col-12">
@@ -153,18 +153,15 @@ export default function AdminProductBox() {
           <div className="col-sm-12 col-md-6">
             <div id="example1_filter" className="dataTables_filter">
               <select onChange={handleSelect}>
-                <option value="preview">Preview</option>
-                <option value="live">Live</option>
+                <option value="preview">Tất cả</option>
+                <option value="live">Đã xuất bản</option>
               </select>
-              <label>
-                Search:
-                <input
-                  type="search"
-                  className="form-control form-control-sm"
-                  placeholder=""
-                  aria-controls="example1"
-                />
-              </label>
+              <input
+                type="search"
+                className="form-control form-control-sm"
+                placeholder="Tìm kiếm"
+                aria-controls="example1"
+              />
             </div>
           </div>
         </div>
@@ -195,7 +192,7 @@ export default function AdminProductBox() {
                     colSpan={1}
                     aria-label="Browser: activate to sort column ascending"
                   >
-                    ProductId
+                    ID
                   </th>
                   <th
                     className="sorting"
@@ -206,7 +203,7 @@ export default function AdminProductBox() {
                     aria-sort="ascending"
                     aria-label="Rendering engine: activate to sort column descending"
                   >
-                    ProductName
+                    Tên
                   </th>
                   <th
                     className="sorting"
@@ -216,7 +213,7 @@ export default function AdminProductBox() {
                     colSpan={1}
                     aria-label="Browser: activate to sort column ascending"
                   >
-                    Image
+                    Hình ảnh
                   </th>
                   <th
                     className="sorting"
@@ -236,7 +233,7 @@ export default function AdminProductBox() {
                     colSpan={1}
                     aria-label="Engine version: activate to sort column ascending"
                   >
-                    Publish
+                    Xuất bản
                   </th>
                   <th
                     className="sorting"
@@ -246,7 +243,7 @@ export default function AdminProductBox() {
                     colSpan={1}
                     aria-label="CSS grade: activate to sort column ascending"
                   >
-                    Action
+                    Tác vụ
                   </th>
                 </tr>
               </thead>

@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import AppUrl from "../../API/AppUrl";
-export default function NavBar(){
-    return (
-<div className="navbar">
+export default function NavBar() {
+  return (
+    <div className="navbar">
       <div className="navbar-inner">
         <div className="container">
           <a
+            href="#st"
             data-target=".nav-collapse"
             data-toggle="collapse"
             className="btn btn-navbar"
@@ -18,23 +18,10 @@ export default function NavBar(){
           <div className="nav-collapse">
             <ul className="nav">
               <li className="active">
-                <a href="/">Home </a>
+                <Link to="/">Trang chủ </Link>
               </li>
               <li className>
-                <Link to='/product'> Products</Link>
-                {/* <a href="list-view.html">List View</a> */}
-              </li>
-              <li className>
-                <a href="grid-view.html">Grid View</a>
-              </li>
-              <li className>
-                <a href="three-col.html">Three Column</a>
-              </li>
-              <li className>
-                <a href="four-col.html">Four Column</a>
-              </li>
-              <li className>
-                <a href="general.html">General Content</a>
+                <Link to='/product'>Cửa hàng</Link>
               </li>
             </ul>
             <form action="#st" className="navbar-search pull-left">
@@ -51,7 +38,7 @@ export default function NavBar(){
                   className="dropdown-toggle"
                   href="#st"
                 >
-                  <span className="icon-lock" /> Login <b className="caret" />
+                  <span className="icon-lock" /> Đăng nhập <b className="caret" />
                 </a>
                 <div className="dropdown-menu">
                   <form className="form-horizontal loginFrm">
@@ -88,5 +75,5 @@ export default function NavBar(){
       </div>
     </div>
 
-    )
+  )
 }
